@@ -134,7 +134,8 @@ async def level(ctx, member=None):
 
     else:
         user = ctx.author
-
+        
+        print(user)
 
     cursor.execute("SELECT exp, lvl FROM level_users WHERE id=%s", (user.id, ))
     infos = cursor.fetchone()
