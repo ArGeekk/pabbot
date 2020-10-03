@@ -131,12 +131,13 @@ async def level(ctx, member=None):
             await ctx.author.send("Tu n'as pas la permission pour faire ça !")
             return
         user = ctx.guild.get_member(int(member[3:-1]))
+        print(int(member[3:-1]))
 
     else:
         user = ctx.author
-        
+        print(user)
 
-    print(int(member[3:-1]))
+    
 
     cursor.execute("SELECT exp, lvl FROM level_users WHERE id=%s", (user.id, ))
     infos = cursor.fetchone()
